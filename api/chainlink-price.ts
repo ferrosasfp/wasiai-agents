@@ -4,7 +4,7 @@
  */
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-import { readChainlinkFeed } from '../../shared/chainlink.js'
+import { readChainlinkFeed } from '../shared/chainlink.js'
 
 const app = new Hono()
 

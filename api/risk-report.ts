@@ -5,12 +5,12 @@
  */
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-import { readChainlinkFeed } from '../../shared/chainlink.js'
-import { analyzeOnChain } from '../../shared/onchain.js'
-import { auditContract } from '../../shared/auditor.js'
-import { analyzeSentiment } from '../../shared/sentiment.js'
-import { computeRiskScore, generateSummary } from '../../shared/riskScorer.js'
-import type { RiskReport } from '../../shared/types.js'
+import { readChainlinkFeed } from '../shared/chainlink.js'
+import { analyzeOnChain } from '../shared/onchain.js'
+import { auditContract } from '../shared/auditor.js'
+import { analyzeSentiment } from '../shared/sentiment.js'
+import { computeRiskScore, generateSummary } from '../shared/riskScorer.js'
+import type { RiskReport } from '../shared/types.js'
 
 const app = new Hono()
 

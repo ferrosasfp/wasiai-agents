@@ -4,7 +4,7 @@
  */
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-import { auditContract } from '../../shared/auditor.js'
+import { auditContract } from '../shared/auditor.js'
 
 const app = new Hono()
 

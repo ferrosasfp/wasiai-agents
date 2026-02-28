@@ -4,7 +4,7 @@
  */
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-import { analyzeOnChain } from '../../shared/onchain.js'
+import { analyzeOnChain } from '../shared/onchain.js'
 
 const app = new Hono()
 
