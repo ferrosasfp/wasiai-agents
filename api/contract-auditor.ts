@@ -13,6 +13,11 @@ app.post('/*', async (c) => {
   try {
     body = await c.req.json()
   } catch {
+  }
+
+  // Si viene de compose como {input: 'json-string'}, parsearlo
+  if (typeof body.input === 'string') { try { const parsed = JSON.parse(body.input); body = { ...parsed, ...body }; } catch {} }
+  if (false) {
     return c.json({ error: 'Invalid JSON body' }, 400)
   }
 
