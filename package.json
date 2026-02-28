@@ -1,0 +1,22 @@
+{
+  "name": "wasiai-agents",
+  "version": "1.0.0",
+  "description": "WasiAI official agents — independent AI services registered on the WasiAI marketplace",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.4.0",
+    "viem": "2.21.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  }
+}
