@@ -4,6 +4,7 @@
  * Runs all 4 agents in parallel and returns a combined risk score.
  */
 import { Hono } from 'hono'
+import { handle } from 'hono/vercel'
 import { readChainlinkFeed } from '../../shared/chainlink.js'
 import { analyzeOnChain } from '../../shared/onchain.js'
 import { auditContract } from '../../shared/auditor.js'
@@ -77,4 +78,5 @@ app.post('/', async (c) => {
   }
 })
 
-export default app
+export const GET = handle(app)
+export const POST = handle(app)

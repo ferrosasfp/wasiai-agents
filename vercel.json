@@ -1,4 +1,7 @@
 {
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "installCommand": "npm install",
   "functions": {
     "api/chainlink-price.ts":  { "maxDuration": 30 },
     "api/onchain-analyzer.ts": { "maxDuration": 30 },

@@ -3,6 +3,7 @@
  * POST / → { token_address }
  */
 import { Hono } from 'hono'
+import { handle } from 'hono/vercel'
 import { analyzeOnChain } from '../../shared/onchain.js'
 
 const app = new Hono()
@@ -32,4 +33,5 @@ app.post('/', async (c) => {
   }
 })
 
-export default app
+export const GET = handle(app)
+export const POST = handle(app)

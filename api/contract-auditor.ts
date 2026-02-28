@@ -3,6 +3,7 @@
  * POST / → { token_address, bytecode? }
  */
 import { Hono } from 'hono'
+import { handle } from 'hono/vercel'
 import { auditContract } from '../../shared/auditor.js'
 
 const app = new Hono()
@@ -37,4 +38,5 @@ app.post('/', async (c) => {
   }
 })
 
-export default app
+export const GET = handle(app)
+export const POST = handle(app)

@@ -3,6 +3,7 @@
  * POST / → { feed_address?, token_symbol? }
  */
 import { Hono } from 'hono'
+import { handle } from 'hono/vercel'
 import { readChainlinkFeed } from '../../shared/chainlink.js'
 
 const app = new Hono()
@@ -38,4 +39,5 @@ app.post('/', async (c) => {
   }
 })
 
-export default app
+export const GET = handle(app)
+export const POST = handle(app)
