@@ -1,16 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/api/chainlink-price",   "destination": "/agents/chainlink-price/index" },
-    { "source": "/api/onchain-analyzer",  "destination": "/agents/onchain-analyzer/index" },
-    { "source": "/api/contract-auditor",  "destination": "/agents/contract-auditor/index" },
-    { "source": "/api/defi-sentiment",    "destination": "/agents/defi-sentiment/index" },
-    { "source": "/api/risk-report",       "destination": "/agents/risk-report/index" }
-  ],
   "functions": {
-    "agents/chainlink-price/index.ts":  { "maxDuration": 30 },
-    "agents/onchain-analyzer/index.ts": { "maxDuration": 30 },
-    "agents/contract-auditor/index.ts": { "maxDuration": 60 },
-    "agents/defi-sentiment/index.ts":   { "maxDuration": 30 },
-    "agents/risk-report/index.ts":      { "maxDuration": 60 }
+    "api/chainlink-price.ts":  { "maxDuration": 30 },
+    "api/onchain-analyzer.ts": { "maxDuration": 30 },
+    "api/contract-auditor.ts": { "maxDuration": 60 },
+    "api/defi-sentiment.ts":   { "maxDuration": 30 },
+    "api/risk-report.ts":      { "maxDuration": 60 }
   }
 }
