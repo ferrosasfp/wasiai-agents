@@ -14,7 +14,7 @@ import type { RiskReport } from '../shared/types.js'
 
 const app = new Hono()
 
-app.post('/', async (c) => {
+app.post('/*', async (c) => {
   let body: Record<string, unknown>
   try {
     body = await c.req.json()
