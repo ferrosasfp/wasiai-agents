@@ -22,6 +22,9 @@ app.post('/*', async (c) => {
     return c.json({ error: 'Invalid JSON body' }, 400)
   }
 
+  // Si viene de compose como {input: 'json-string'}, parsearlo
+  if (typeof body.input === 'string') { try { const parsed = JSON.parse(body.input); body = { ...parsed, ...body }; } catch {} }
+
   const tokenAddress = (body.token_address as string | undefined)?.trim()
   if (!tokenAddress) {
     return c.json({ error: 'Missing required field: token_address' }, 400)
