@@ -31,6 +31,9 @@ app.post('/*', async (c) => {
     return c.json({ error: 'Invalid token_address — must be a 0x-prefixed 40-char hex address' }, 400)
   }
 
+  // Si viene de compose como {input: 'json-string'}, parsearlo
+  if (typeof body.input === 'string') { try { const parsed = JSON.parse(body.input); body = { ...parsed, ...body }; } catch {} }
+
   const tokenSymbol = (body.token_symbol as string | undefined)?.trim() ?? 'UNKNOWN'
 
   // Default Chainlink feed from env
